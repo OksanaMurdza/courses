@@ -15,7 +15,7 @@ public class Employee {
         this.manager = manager;
     }
 
-    protected void setSalary(){
+    public double getSalary(){
         tmpSalary = salary;
         double coef = 1.2;
         if (experience > 5){
@@ -25,10 +25,6 @@ public class Employee {
                 tmpSalary = salary + 200;
             }
         }
-    }
-
-    public double getSalary(){
-        setSalary();
         return tmpSalary;
     }
 

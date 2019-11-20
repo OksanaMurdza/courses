@@ -29,22 +29,18 @@ public class Manager extends Employee {
         setTeamMembers(team.size());
     }
 
-    @Override
-    protected void setSalary() {
-        tmpSalary = salary;
-        if (teamMembers > 10){
-            tmpSalary = salary + 300;
-        } else {
-            if (teamMembers > 5){
-                tmpSalary = salary + 200;
-            }
-        }
-        if ((teamMembers/2) < devMember) tmpSalary*=1.1;
-    }
 
     @Override
     public double getSalary() {
-        setSalary();
+        tmpSalary = super.getSalary();
+        if (teamMembers > 10){
+            tmpSalary = tmpSalary + 300;
+        } else {
+            if (teamMembers > 5){
+                tmpSalary = tmpSalary + 200;
+            }
+        }
+        if ((teamMembers/2) < devMember) tmpSalary*=1.1;
         return tmpSalary;
     }
 
